@@ -20,8 +20,8 @@ export default class RichTextEditor extends Component {
   componentWillMount() {
     if (this.props.editMode && this.props.contentToEdit) {
       const blockFromHtml = htmlToDraft(this.props.contentToEdit);
-      const { contentBlocks, entityMap } = blocksFromHtml;
-      const contentSate = ContentState.createFromBlockArray(
+      const { contentBlocks, entityMap } = blockFromHtml;
+      const contentState = ContentState.createFromBlockArray(
         contentBlocks,
         entityMap
       );
